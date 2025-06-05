@@ -1,5 +1,5 @@
-# Author: Gustavo Lozano
 
+#autor_Vanesa Araujo
 Feature: Prueba de PLaywright
 
   @Smoke
