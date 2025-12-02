@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb52dbc4-9c76-43f7-8ab4-c19d904af5c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Validaciones_de_Inicio_de_sesion.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Steps/StepInicioSesionValidaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Steps/StepInicioSesionValidaciones.java" afterDir="false" />
-    </list>
+    <list default="true" id="fb52dbc4-9c76-43f7-8ab4-c19d904af5c9" name="Changes" comment="Prueba funcionando de Validaciones_de_Inicio_de_sesion.png" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -195,8 +190,16 @@
       <workItem from="1749160722509" duration="93000" />
       <workItem from="1764618778790" duration="7431000" />
       <workItem from="1764689010324" duration="7647000" />
-      <workItem from="1764713072120" duration="1583000" />
+      <workItem from="1764713072120" duration="1957000" />
     </task>
+    <task id="LOCAL-00001" summary="Prueba funcionando de Validaciones_de_Inicio_de_sesion.png">
+      <created>1764714904846</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1764714904847</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +245,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Prueba funcionando de Validaciones_de_Inicio_de_sesion.png" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prueba funcionando de Validaciones_de_Inicio_de_sesion.png" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
