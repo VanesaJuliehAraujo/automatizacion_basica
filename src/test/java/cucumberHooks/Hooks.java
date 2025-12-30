@@ -11,7 +11,6 @@ import java.nio.file.Paths;
 public class Hooks {
     @Before
     public void Before() {
-        //System.out.println(" -- Starting before -- ");
         driver.startDriver();
     }
 
