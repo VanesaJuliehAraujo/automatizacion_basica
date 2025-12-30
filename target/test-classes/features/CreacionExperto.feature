@@ -1,19 +1,16 @@
 
 Feature: Upccelerator
 
-  @Smoke
-  @test
+  @Ignore
   Scenario: Creación de experto
 
-    Given El usuario accede al sistema de upccelerator
-    And Correo correcto
-    And El usuario da clic en el boton Craer Experto
+    Given El usuario da clic en el boton Crear Experto
     And El usuario agrega fotografia
     And Selecciona la imagen del local
     When Seleccion de imagen dos
     And Elimina imagen
     When Nombre experto
-    When Descripción
+    When Descripcion
     And Email incorrecto
     And Email correcto
     When Selecciona extension

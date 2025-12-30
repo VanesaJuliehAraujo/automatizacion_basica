@@ -12,3 +12,14 @@ Feature: Upccelerator
     And Codigo incorrecto
     And Reenviar codigo
     Then Codigo correcto
+    And El usuario da clic en Agregar Experto
+    And El usuario agrega fotografia
+    When Nombre experto
+    When Descripción
+    And Email incorrecto
+    When Selecciona extension
+    When Telefono
+    And Pais
+    And Ciudad
+    And Email correcto
+    Then Clic  Guardar

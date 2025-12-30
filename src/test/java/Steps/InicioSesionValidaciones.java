@@ -6,6 +6,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.nio.file.Paths;
+import java.util.regex.Pattern;
+
 import static driverSetup.driver.page;
 
 public class InicioSesionValidaciones {
@@ -74,15 +77,21 @@ public class InicioSesionValidaciones {
         page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Código de Acceso")).nth(5).fill("6");
         page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Código de Acceso")).nth(5).press("Enter");
         page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Ingresar")).first().click();
+
+          //System.out.print("hasta aqui llegó");
     }
 
     @Given("El usuario da clic en Agregar Experto")
     public void clic_agregar_experto() {
-        page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Agregar experto")).click();
+        page.getByRole(
+                AriaRole.BUTTON,
+                new Page.GetByRoleOptions().setName(Pattern.compile("Agregar"))
+        ).click();
+
+
     }
 
-
-   /* @Given("El usuario agrega fotografia")
+    @Given("El usuario agrega fotografia")
     public void el_usuario_agrega_fotografia() {
         page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Seleccionar archivos")).click();
         page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Seleccionar archivos")).setInputFiles(Paths.get("pet (1).jpg"));
@@ -92,7 +101,7 @@ public class InicioSesionValidaciones {
         page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Seleccionar archivo")).click();
         page.locator("form").click();
 
-    } */
+    }
 
     @When("Nombre experto")
     public void nombre_experto() {
@@ -101,9 +110,9 @@ public class InicioSesionValidaciones {
 
     }
     @When("Descripción")
-    public void descripción() {
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Descripción Descripción")).click();
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Descripción Descripción")).fill("esto es una prueba");
+    public void descripcion() {
+        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Descripción Descripcion")).click();
+        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Descripción Descripcion")).fill("esto es una prueba");
 
     }
     @When("Email incorrecto")
