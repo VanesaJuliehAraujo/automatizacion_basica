@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir /s /b *.jpg *.png *.jpeg)",
+      "Bash(findstr:*)",
+      "Bash(mkdir:*)",
+      "Bash(mvn clean test:*)",
+      "Bash(mvn test:*)"
+    ]
+  }
+}

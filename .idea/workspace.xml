@@ -4,17 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb52dbc4-9c76-43f7-8ab4-c19d904af5c9" name="Changes" comment="Prueba funcionando de Validaciones_de_Inicio_de_sesion.png">
+    <list default="true" id="fb52dbc4-9c76-43f7-8ab4-c19d904af5c9" name="Changes" comment="hasta aquí funciona el botón &quot;crear experto&quot;">
+      <change afterPath="$PROJECT_DIR$/.claude/settings.local.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/after_click_agregar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/before_guardar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/error_fotografia.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/images/PXL_20251122_225754479.MP.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/images/Screenshot_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/images/pet (1).jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Validaciones_de_Inicio_de_sesion.png" beforeDir="false" afterPath="$PROJECT_DIR$/Validaciones_de_Inicio_de_sesion.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Steps/CreacionExperto.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Steps/InicioSesionValidaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Steps/InicioSesionValidaciones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/CreacionExperto.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/CreacionExperto.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/InicioSesionValidaciones.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/InicioSesionValidaciones.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cucumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cucumber.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/Steps/InicioSesionValidaciones.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Steps/InicioSesionValidaciones.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/CreacionExperto.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/CreacionExperto.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/features/InicioSesionValidaciones.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/InicioSesionValidaciones.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +111,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in TestPlaywright">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Validaciones de Inicio de sesion (1)">
     <configuration name="Feature: InicioSesion" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="7" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/InicioSesion.feature" />
@@ -126,15 +130,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Creación de experto" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Validaciones de Inicio de sesion (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/CreacionExperto.feature" />
-      <option name="GLUE" value="cucumberHooks" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/InicioSesionValidaciones.feature" />
+      <option name="GLUE" value="Steps cucumberHooks" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="TestPlaywright" />
-      <option name="NAME_FILTER" value="^Creación de experto$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Creación de experto$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Creación de experto" />
+      <option name="NAME_FILTER" value="^Validaciones de Inicio de sesion$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Validaciones de Inicio de sesion$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Validaciones de Inicio de sesion" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -183,7 +187,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Cucumber Java.Scenario: Creación de experto" />
+      <item itemvalue="Cucumber Java.Scenario: Validaciones de Inicio de sesion (1)" />
       <item itemvalue="Cucumber Java.Feature: InicioSesion" />
       <item itemvalue="Cucumber Java.Scenario: Validaciones de Inicio de sesion" />
       <item itemvalue="JUnit.CucumberTestRunner" />
@@ -191,11 +195,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: Validaciones de Inicio de sesion (1)" />
         <item itemvalue="JUnit.All in TestPlaywright" />
         <item itemvalue="Cucumber Java.Feature: InicioSesion" />
         <item itemvalue="JUnit.CucumberTestRunner" />
         <item itemvalue="Cucumber Java.Scenario: Validaciones de Inicio de sesion" />
-        <item itemvalue="Cucumber Java.Scenario: Creación de experto" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +230,7 @@
       <workItem from="1765394559357" duration="986000" />
       <workItem from="1765396017789" duration="4452000" />
       <workItem from="1767026397571" duration="9621000" />
-      <workItem from="1767126642152" duration="1523000" />
+      <workItem from="1767126642152" duration="10280000" />
     </task>
     <task id="LOCAL-00001" summary="Prueba funcionando de Validaciones_de_Inicio_de_sesion.png">
       <created>1764714904846</created>
@@ -242,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1764715220392</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="hasta aquí funciona el botón &quot;crear experto&quot;">
+      <created>1767128242343</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1767128242343</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +300,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Prueba funcionando de Validaciones_de_Inicio_de_sesion.png" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prueba funcionando de Validaciones_de_Inicio_de_sesion.png" />
+    <MESSAGE value="hasta aquí funciona el botón &quot;crear experto&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="hasta aquí funciona el botón &quot;crear experto&quot;" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -23,3 +23,9 @@ Feature: Upccelerator
     And Ciudad
     And Email correcto
     Then Clic  Guardar
+    And Editar
+    And Editar Descripcion
+    Then Modificar
+    And Eliminar experto
+    When Cancelar eliminar
+    Then Confirmar eliminar
