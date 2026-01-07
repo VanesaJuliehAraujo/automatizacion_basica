@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb52dbc4-9c76-43f7-8ab4-c19d904af5c9" name="Changes" comment="hasta aquí funciona el botón &quot;crear experto&quot;">
-      <change afterPath="$PROJECT_DIR$/after_delete.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/before_edit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Steps/ExpertosSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Steps/InicioSesionSteps.java" afterDir="false" />
+    <list default="true" id="fb52dbc4-9c76-43f7-8ab4-c19d904af5c9" name="Changes" comment="FUNCIONAL, Edita y eliminar experto">
+      <change beforePath="$PROJECT_DIR$/.claude/settings.local.json" beforeDir="false" afterPath="$PROJECT_DIR$/.claude/settings.local.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/after_click_agregar.png" beforeDir="false" afterPath="$PROJECT_DIR$/after_click_agregar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/after_delete.png" beforeDir="false" afterPath="$PROJECT_DIR$/after_delete.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/before_edit.png" beforeDir="false" afterPath="$PROJECT_DIR$/before_edit.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/before_guardar.png" beforeDir="false" afterPath="$PROJECT_DIR$/before_guardar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Steps/InicioSesionValidaciones.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Steps/InicioSesionValidaciones.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +221,7 @@
       <workItem from="1765394559357" duration="986000" />
       <workItem from="1765396017789" duration="4452000" />
       <workItem from="1767026397571" duration="9621000" />
-      <workItem from="1767126642152" duration="11148000" />
+      <workItem from="1767126642152" duration="11805000" />
     </task>
     <task id="LOCAL-00001" summary="Prueba funcionando de Validaciones_de_Inicio_de_sesion.png">
       <created>1764714904846</created>
@@ -254,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1767481033565</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="FUNCIONAL, Edita y eliminar experto">
+      <created>1767482020184</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1767482020184</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +306,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Prueba funcionando de Validaciones_de_Inicio_de_sesion.png" />
     <MESSAGE value="hasta aquí funciona el botón &quot;crear experto&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="hasta aquí funciona el botón &quot;crear experto&quot;" />
+    <MESSAGE value="FUNCIONAL, Edita y eliminar experto" />
+    <option name="LAST_COMMIT_MESSAGE" value="FUNCIONAL, Edita y eliminar experto" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
