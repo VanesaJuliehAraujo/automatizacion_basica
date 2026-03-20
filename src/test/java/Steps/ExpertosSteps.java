@@ -3,6 +3,8 @@ package Steps;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
+import com.microsoft.playwright.options.LoadState;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -20,17 +22,13 @@ public class ExpertosSteps {
 
     @Given("El usuario da clic en Agregar Experto")
     public void clic_agregar_experto() {
-        page.waitForTimeout(5000);
-        // Intentar navegar directamente a la página de expertos
         page.navigate("https://appredesign.upccelerator.com/experts");
-        page.waitForTimeout(3000);
-        // Buscar el botón con texto que contenga "AGREGAR"
+        page.waitForLoadState(LoadState.DOMCONTENTLOADED);
         page.getByRole(
                 AriaRole.BUTTON,
                 new Page.GetByRoleOptions().setName(Pattern.compile("AGREGAR", Pattern.CASE_INSENSITIVE))
         ).first().click();
-        page.waitForTimeout(3000);
-        // Screenshot para debug
+        page.waitForTimeout(1000);
         page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("after_click_agregar.png")));
         System.out.println("Screenshot guardado: after_click_agregar.png");
     }
@@ -42,74 +40,53 @@ public class ExpertosSteps {
 
     @Given("El usuario agrega fotografia")
     public void el_usuario_agrega_fotografia() {
-        // Esperar para que el modal esté completamente cargado
-        page.waitForTimeout(3000);
-
+        page.waitForTimeout(1000);
         try {
-            // Intentar encontrar y cargar la imagen
-            // Primero verificar si hay inputs de tipo file visibles
             if (page.locator("input[type='file']").count() > 0) {
                 page.locator("input[type='file']").first().setInputFiles(Paths.get("src/test/resources/images/pet (1).jpg"));
-                page.waitForTimeout(3000);
+                page.waitForTimeout(1000);
                 System.out.println("Fotografía cargada exitosamente");
             } else {
                 System.out.println("No se encontró input de archivo - continuando sin imagen");
             }
         } catch (Exception e) {
             System.out.println("Error al cargar fotografía (opcional): " + e.getMessage());
-            System.out.println("Continuando sin imagen...");
         }
-
-        page.waitForTimeout(2000);
     }
 
     @Given("Selecciona la imagen del local")
     public void selecciona_imagen_del_local() {
-        page.waitForTimeout(1000);
-        // Cargar primera imagen de perfil
         page.locator("input[type='file']").first().setInputFiles(Paths.get("src/test/resources/images/pet (1).jpg"));
-        page.waitForTimeout(1500);
+        page.waitForTimeout(500);
         System.out.println("Primera imagen seleccionada del local");
     }
 
     @When("Seleccion de imagen dos")
     public void seleccion_imagen_dos() {
-        page.waitForTimeout(1000);
-        // Cargar imagen de logotipo (segundo input)
         page.locator("input[type='file']").nth(1).setInputFiles(Paths.get("src/test/resources/images/Screenshot_2.png"));
-        page.waitForTimeout(1500);
+        page.waitForTimeout(500);
         System.out.println("Segunda imagen seleccionada");
     }
 
     @When("Elimina imagen")
     public void elimina_imagen() {
-        page.waitForTimeout(1000);
-        // Buscar botón de eliminar imagen (generalmente un ícono de X o trash)
-        // Intentar varios selectores comunes para botones de eliminar
         try {
             page.locator("button[aria-label*='eliminar'], button[aria-label*='delete'], button[aria-label*='remove']").first().click();
             System.out.println("Imagen eliminada");
         } catch (Exception e) {
             System.out.println("No se encontró botón de eliminar o ya fue eliminada");
         }
-        page.waitForTimeout(1000);
     }
 
     @When("Nombre experto")
     public void nombre_experto() {
-        // Esperar un poco para asegurar que el modal esté listo
-        page.waitForTimeout(2000);
-
-        // Forzar el llenado sin click previo para evitar problemas de overlays
         page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Nombre.*", Pattern.CASE_INSENSITIVE))).first().fill("prueba automatizada 2");
-        page.waitForTimeout(1000);
     }
 
     @When("Descripción")
     public void descripcion() {
         page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Descripci.*", Pattern.CASE_INSENSITIVE))).first().click();
         page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Descripci.*", Pattern.CASE_INSENSITIVE))).first().fill("esto es una prueba");
-        page.waitForTimeout(1000);
     }
 
     @When("Descripcion")
@@ -121,7 +98,6 @@ public class ExpertosSteps {
     public void email_incorrecto() {
         page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Email.*", Pattern.CASE_INSENSITIVE))).first().click();
         page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Email.*", Pattern.CASE_INSENSITIVE))).first().fill("hahortadevcol.com");
-        page.waitForTimeout(1000);
     }
 
     @When("Selecciona extension")
@@ -132,8 +108,8 @@ public class ExpertosSteps {
 
     @When("Telefono")
     public void telefono() {
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Teléfono Teléfono")).click();
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Teléfono Teléfono")).fill("(302) 446 - 9077");
+        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*[Tt]el.*"))).first().click();
+        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*[Tt]el.*"))).first().fill("(302) 446 - 9077");
     }
 
     @When("Pais")
@@ -144,45 +120,48 @@ public class ExpertosSteps {
 
     @When("Ciudad")
     public void ciudad() {
-        page.waitForTimeout(1000);
-        // Hacer clic en el campo de ciudad para abrir el selector
         page.locator(".flex.gap-2 > .v-input > .v-input__control > .v-field > .v-field__field > .v-field__input").click();
-        page.waitForTimeout(1000);
-        // Seleccionar la ciudad
+        page.waitForTimeout(500);
         page.getByText("Anton", new Page.GetByTextOptions().setExact(true)).click();
+    }
+
+    @And("Dominio")
+    public void dominio() {
+        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Dominio")).click();
+        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Dominio")).fill("www.pruebaautomatizada.com");
+    }
+
+    @And("Terminos y condiciones")
+    public void Terminos_y_condiciones() {
+        page.locator(".ql-editor").first().press("CapsLock");
+
+        page.locator(".ql-editor").first().fill("Aceptación de términos y condiciones, indica que al navegar, compra, el usuario acepta las condiciones\n\nPolítica de pagos: Especifica los métodos de pago moneda y la obligación de realizar el pago por adelantado\n\nUso permitido: Prohíbe actividades ilícitas, spam o comentarios ofensivos");
+    }
+
+    @And("Politica de tratamiento de datos")
+    public void politica_de_tratamiento_de_datos() {
+        page.locator(".ql-editor").nth(1).click();
+        page.locator(".ql-editor").nth(1).fill("Aceptación de terminos y condiciones, indica que al navegar, compra, el usuario acepta las condiciones\n\nPolítica de pagos: Especifica los métodos de pago moneda y la obligación de realizar el pago por adelantado\n\nUso permitido: Prohibe actividades ilicitas, spam o comentarios ofensivos\n\nAceptación de Términos: Indica que al navegar o comprar, el usuario acepta las condiciones.\nPropiedad Intelectual: Protege el contenido (logos, textos, fotos) indicando que es propiedad exclusiva de la empresa. Política de Pagos: Especifica los métodos de pago, moneda y la obligatoriedad de realizar el pago por adelantado. Uso Permitido/Prohibido: Prohíbe actividades ilícitas, spam o comentarios ofensivos.\nEnvíos y Devoluciones: Detalla tiempos de entrega, costes de envío y el procedimiento para devoluciones o garantías.\nLimitación de Responsabilidad: La empresa no se hace responsable de errores técnicos o usos indebidos del producto. Legislación Aplicable: Define la jurisdicción y las leyes del país o estado bajo las cuales se rige el acuerdo");
     }
 
     @Then("Clic  Guardar")
     public void clic_guardar() {
-        // Esperar un poco para que el formulario se valide
-        page.waitForTimeout(3000);
-
-        // Tomar screenshot antes de intentar guardar
+        page.waitForTimeout(1000);
         page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("before_guardar.png")).setFullPage(true));
         System.out.println("Screenshot antes de guardar: before_guardar.png");
-
-        // Intentar hacer clic en el botón Guardar con force
         try {
-            // Buscar el botón con un timeout más corto
             page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Guardar")).click(new com.microsoft.playwright.Locator.ClickOptions().setForce(true).setTimeout(10000));
             System.out.println("Clic en Guardar ejecutado exitosamente");
         } catch (Exception e) {
             System.out.println("Nota: No se pudo hacer clic en Guardar - " + e.getMessage());
-            System.out.println("El formulario pudo haber sido enviado automáticamente o el modal pudo cerrarse");
         }
-
-        page.waitForTimeout(3000);
+        page.waitForTimeout(1000);
     }
 
     @When("Email correcto")
     public void email_correcto() {
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Email Email")).dblclick();
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Email Email")).press("ArrowLeft");
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Email Email")).press("ArrowLeft");
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Email Email")).press("ArrowLeft");
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Email Email")).fill("hahorta@devcol.com");
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Email Email")).click();
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Email Email")).fill("hahorta@devcol.com.co");
+        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Email.*", Pattern.CASE_INSENSITIVE))).first().click();
+        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Email.*", Pattern.CASE_INSENSITIVE))).first().fill("hahorta@devcol.com.co");
         page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Guardar")).click();
     }
 
@@ -190,40 +169,27 @@ public class ExpertosSteps {
     // EDITAR EXPERTO
     // ============================================
 
+    private void clickThreeDotMenu() {
+        Locator card = page.locator(".v-card").filter(new Locator.FilterOptions().setHasText("prueba automatizada 2"));
+        if (card.count() == 0) {
+            card = page.locator(".v-card").filter(new Locator.FilterOptions().setHasText("hahorta@devcol.com.co"));
+        }
+        card.first().locator("button").filter(new Locator.FilterOptions().setHasText(Pattern.compile("^$"))).first()
+            .click(new Locator.ClickOptions().setForce(true));
+    }
+
     @Then("Editar")
     public void editar() {
-        // Esperar a que la página esté lista
-        page.waitForTimeout(2000);
-
-        // Screenshot antes de editar
+        page.navigate("https://appredesign.upccelerator.com/experts");
+        page.waitForLoadState(LoadState.DOMCONTENTLOADED);
+        page.waitForTimeout(500);
         page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("before_edit.png")));
         System.out.println("Buscando el experto 'prueba automatizada 2' para editar...");
-
         try {
-            // Buscar la tarjeta del experto por su nombre o email
-            Locator expertoCard = page.locator("text=prueba automatizada 2").locator("..");
-
-            // Si no lo encuentra por nombre, intentar por email
-            if (expertoCard.count() == 0) {
-                expertoCard = page.locator("text=hahorta@devcol.com.co").locator("..");
-            }
-
-            // Navegar hacia arriba hasta encontrar la tarjeta completa del experto
-            for (int i = 0; i < 5; i++) {
-                expertoCard = expertoCard.locator("..");
-                // Verificar si contiene el botón de opciones
-                if (expertoCard.locator("button").filter(new Locator.FilterOptions().setHasText(Pattern.compile("^$"))).count() > 0) {
-                    break;
-                }
-            }
-
-            // Hacer clic en el botón de opciones (3 puntos) dentro de esa tarjeta
-            expertoCard.locator("button").filter(new Locator.FilterOptions().setHasText(Pattern.compile("^$"))).first().click();
+            clickThreeDotMenu();
+            page.locator(".v-list-item").filter(new Locator.FilterOptions().setHasText("Editar")).first().click();
             page.waitForTimeout(1000);
-
-            // Hacer clic en la opción "Editar"
-            page.getByText("Editar").click();
-            page.waitForTimeout(2000);
+            page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("after_3dot_editar.png")));
             System.out.println("Modal de edición abierto para 'prueba automatizada 2'");
         } catch (Exception e) {
             System.out.println("Error al abrir edición: " + e.getMessage());
@@ -233,14 +199,9 @@ public class ExpertosSteps {
 
     @Then("Editar Descripcion")
     public void editar_descripcion() {
-        page.waitForTimeout(1000);
-
-        // Intentar con diferentes variantes del nombre del campo
         try {
             page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Descripci.*", Pattern.CASE_INSENSITIVE))).first().click();
-            page.waitForTimeout(500);
             page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Descripci.*", Pattern.CASE_INSENSITIVE))).first().fill("esto es una prueba, editada");
-            page.waitForTimeout(1000);
             System.out.println("Descripción editada correctamente");
         } catch (Exception e) {
             System.out.println("Error al editar descripción: " + e.getMessage());
@@ -249,11 +210,9 @@ public class ExpertosSteps {
 
     @Then("Modificar")
     public void modificar() {
-        page.waitForTimeout(1000);
-
         try {
-            page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Modificar")).click();
-            page.waitForTimeout(3000);
+            page.evaluate("() => { const btns = Array.from(document.querySelectorAll('button')); const btn = btns.find(b => b.textContent.trim().toLowerCase() === 'modificar'); if (btn) { btn.scrollIntoView(); btn.click(); } else throw new Error('Botón Modificar no encontrado'); }");
+            page.waitForTimeout(1000);
             System.out.println("Experto modificado");
         } catch (Exception e) {
             System.out.println("Error al modificar: " + e.getMessage());
@@ -267,36 +226,19 @@ public class ExpertosSteps {
 
     @Then("Eliminar experto")
     public void eliminar_experto() {
-        // Esperar a que la página esté lista
-        page.waitForTimeout(2000);
-
-        System.out.println("Buscando el experto 'prueba automatizada 2' para eliminar...");
-
         try {
-            // Buscar la tarjeta del experto por su nombre o email
-            Locator expertoCard = page.locator("text=prueba automatizada 2").locator("..");
-
-            // Si no lo encuentra por nombre, intentar por email
-            if (expertoCard.count() == 0) {
-                expertoCard = page.locator("text=hahorta@devcol.com.co").locator("..");
+            if (page.locator(".v-overlay--active").count() > 0) {
+                page.locator(".v-overlay--active .v-btn--icon").first().click();
+                page.waitForTimeout(500);
             }
-
-            // Navegar hacia arriba hasta encontrar la tarjeta completa del experto
-            for (int i = 0; i < 5; i++) {
-                expertoCard = expertoCard.locator("..");
-                // Verificar si contiene el botón de opciones
-                if (expertoCard.locator("button").filter(new Locator.FilterOptions().setHasText(Pattern.compile("^$"))).count() > 0) {
-                    break;
-                }
-            }
-
-            // Hacer clic en el botón de opciones (3 puntos) dentro de esa tarjeta
-            expertoCard.locator("button").filter(new Locator.FilterOptions().setHasText(Pattern.compile("^$"))).first().click();
+        } catch (Exception ignore) {}
+        System.out.println("Buscando el experto 'prueba automatizada 2' para eliminar...");
+        try {
+            clickThreeDotMenu();
+            page.waitForTimeout(500);
+            page.locator(".v-list-item").filter(new Locator.FilterOptions().setHasText("Eliminar")).first().click();
             page.waitForTimeout(1000);
-
-            // Hacer clic en la opción "Eliminar"
-            page.getByText("Eliminar").click();
-            page.waitForTimeout(2000);
+            page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("after_3dot_eliminar.png")));
             System.out.println("Modal de confirmación de eliminación abierto para 'prueba automatizada 2'");
         } catch (Exception e) {
             System.out.println("Error al abrir eliminación: " + e.getMessage());
@@ -306,38 +248,10 @@ public class ExpertosSteps {
 
     @When("Cancelar eliminar")
     public void cancelar_eliminar() {
-        page.waitForTimeout(1000);
-
         try {
-            // Hacer clic en el botón Cancelar
             page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Cancelar")).click();
-            page.waitForTimeout(2000);
+            page.waitForTimeout(500);
             System.out.println("Eliminación cancelada");
-
-            // Abrir nuevamente el menú para eliminar el mismo experto
-            page.waitForTimeout(1000);
-
-            // Buscar nuevamente la tarjeta del experto específico
-            Locator expertoCard = page.locator("text=prueba automatizada 2").locator("..");
-
-            if (expertoCard.count() == 0) {
-                expertoCard = page.locator("text=hahorta@devcol.com.co").locator("..");
-            }
-
-            // Navegar hacia arriba hasta encontrar la tarjeta completa
-            for (int i = 0; i < 5; i++) {
-                expertoCard = expertoCard.locator("..");
-                if (expertoCard.locator("button").filter(new Locator.FilterOptions().setHasText(Pattern.compile("^$"))).count() > 0) {
-                    break;
-                }
-            }
-
-            // Hacer clic en el botón de opciones
-            expertoCard.locator("button").filter(new Locator.FilterOptions().setHasText(Pattern.compile("^$"))).first().click();
-            page.waitForTimeout(1000);
-            page.getByText("Eliminar").click();
-            page.waitForTimeout(1000);
-            System.out.println("Modal de eliminación reabierto");
         } catch (Exception e) {
             System.out.println("Error en cancelar eliminar: " + e.getMessage());
         }
@@ -345,15 +259,14 @@ public class ExpertosSteps {
 
     @Then("Confirmar eliminar")
     public void confirmar_eliminar() {
-        page.waitForTimeout(1000);
-
         try {
-            // Hacer clic en "Sí, eliminar"
+            clickThreeDotMenu();
+            page.waitForTimeout(500);
+            page.locator(".v-list-item").filter(new Locator.FilterOptions().setHasText("Eliminar")).first().click();
+            page.waitForTimeout(500);
             page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(Pattern.compile(".*eliminar.*", Pattern.CASE_INSENSITIVE))).click();
-            page.waitForTimeout(3000);
+            page.waitForTimeout(1000);
             System.out.println("Experto eliminado exitosamente");
-
-            // Screenshot de confirmación
             page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("after_delete.png")));
         } catch (Exception e) {
             System.out.println("Error al confirmar eliminación: " + e.getMessage());

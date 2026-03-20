@@ -19,7 +19,8 @@ public class driver {
                     .setTimeout(40000) // timeout in milliseconds
             );
 
-            context = browser.newContext();
+            context = browser.newContext(new Browser.NewContextOptions()
+                    .setViewportSize(1279, 720));
             page = context.newPage();
         } catch (Exception e) {
             System.out.println("Something went wrong with driverSetup.");

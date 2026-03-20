@@ -4,13 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb52dbc4-9c76-43f7-8ab4-c19d904af5c9" name="Changes" comment="FUNCIONAL, Edita y eliminar experto">
-      <change beforePath="$PROJECT_DIR$/.claude/settings.local.json" beforeDir="false" afterPath="$PROJECT_DIR$/.claude/settings.local.json" afterDir="false" />
+    <list default="true" id="fb52dbc4-9c76-43f7-8ab4-c19d904af5c9" name="Changes" comment="FUNCIONAL, Edita y eliminar experto. mini mac">
+      <change afterPath="$PROJECT_DIR$/after_3dot_editar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/after_3dot_eliminar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/before_3dot_eliminar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/debug_plantilla.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dropdown_eliminar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/error_confirmar_eliminar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/error_editar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/error_eliminar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/error_modificar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Steps/EmailEnviarAhora.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Steps/EmailGuardarBorrador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Steps/EmailProgramarEnvio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/EmailEnviarAhora.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/EmailProgramarEnvio.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Validaciones_de_Inicio_de_sesion.png" beforeDir="false" afterPath="$PROJECT_DIR$/Validaciones_de_Inicio_de_sesion.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/after_click_agregar.png" beforeDir="false" afterPath="$PROJECT_DIR$/after_click_agregar.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/after_delete.png" beforeDir="false" afterPath="$PROJECT_DIR$/after_delete.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/before_edit.png" beforeDir="false" afterPath="$PROJECT_DIR$/before_edit.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/before_guardar.png" beforeDir="false" afterPath="$PROJECT_DIR$/before_guardar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Steps/ExpertosSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Steps/ExpertosSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Steps/InicioSesionSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Steps/InicioSesionSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/driverSetup/driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/driverSetup/driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/CreacionExperto.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/EmailGuardarBorrador.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/InicioSesionValidaciones.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/InicioSesionValidaciones.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/CucumberTestRunner.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/CucumberTestRunner.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-CucumberTestRunner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-CucumberTestRunner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Steps/ExpertosSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Steps/ExpertosSteps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Steps/InicioSesionSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Steps/InicioSesionSteps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/driverSetup/driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/driverSetup/driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/CreacionExperto.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/features/InicioSesionValidaciones.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/features/InicioSesionValidaciones.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,14 +132,55 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Validaciones de Inicio de sesion (1)">
-    <configuration name="Feature: InicioSesion" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="7" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/InicioSesion.feature" />
+  <component name="RunManager" selected="JUnit.All in TestPlaywright">
+    <configuration name="Feature: Emails" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Emails.feature" />
+      <option name="GLUE" value="Steps cucumberHooks" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="TestPlaywright" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin teamcity" />
-      <option name="SUGGESTED_NAME" value="Feature: InicioSesion" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: Emails" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Evio ahora de email" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Emails.feature" />
+      <option name="GLUE" value="cucumberHooks" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="TestPlaywright" />
+      <option name="NAME_FILTER" value="^Evio ahora de email$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Evio ahora de email$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Evio ahora de email" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Guardar como borrador" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/EmailGuardarBorrador.feature" />
+      <option name="GLUE" value="cucumberHooks" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="TestPlaywright" />
+      <option name="NAME_FILTER" value="^Guardar como borrador$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Guardar como borrador$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Guardar como borrador" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -141,25 +212,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Validaciones de Inicio de sesion" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="7" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/InicioSesion.feature" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="TestPlaywright" />
-      <option name="NAME_FILTER" value="^Validaciones de Inicio de sesion$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin teamcity --name &quot;^Validaciones de Inicio de sesion$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Validaciones de Inicio de sesion" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in TestPlaywright" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TestPlaywright" />
       <option name="PACKAGE_NAME" value="" />
@@ -168,29 +220,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CucumberTestRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TestPlaywright" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CucumberTestRunner" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="Cucumber Java.Feature: Emails" />
+      <item itemvalue="Cucumber Java.Scenario: Evio ahora de email" />
+      <item itemvalue="Cucumber Java.Scenario: Guardar como borrador" />
       <item itemvalue="Cucumber Java.Scenario: Validaciones de Inicio de sesion (1)" />
-      <item itemvalue="Cucumber Java.Feature: InicioSesion" />
-      <item itemvalue="Cucumber Java.Scenario: Validaciones de Inicio de sesion" />
-      <item itemvalue="JUnit.CucumberTestRunner" />
       <item itemvalue="JUnit.All in TestPlaywright" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Scenario: Validaciones de Inicio de sesion (1)" />
         <item itemvalue="JUnit.All in TestPlaywright" />
-        <item itemvalue="Cucumber Java.Feature: InicioSesion" />
-        <item itemvalue="JUnit.CucumberTestRunner" />
-        <item itemvalue="Cucumber Java.Scenario: Validaciones de Inicio de sesion" />
+        <item itemvalue="Cucumber Java.Scenario: Guardar como borrador" />
+        <item itemvalue="Cucumber Java.Feature: Emails" />
+        <item itemvalue="Cucumber Java.Scenario: Evio ahora de email" />
+        <item itemvalue="Cucumber Java.Scenario: Validaciones de Inicio de sesion (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -222,6 +265,11 @@
       <workItem from="1765396017789" duration="4452000" />
       <workItem from="1767026397571" duration="9621000" />
       <workItem from="1767126642152" duration="11805000" />
+      <workItem from="1767822560088" duration="6426000" />
+      <workItem from="1773088548029" duration="252000" />
+      <workItem from="1773088829761" duration="196000" />
+      <workItem from="1773090472653" duration="20442000" />
+      <workItem from="1773174398068" duration="42346000" />
     </task>
     <task id="LOCAL-00001" summary="Prueba funcionando de Validaciones_de_Inicio_de_sesion.png">
       <created>1764714904846</created>
@@ -258,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1767482020184</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="FUNCIONAL, Edita y eliminar experto. mini mac">
+      <created>1767822825991</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1767822825991</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,7 +362,8 @@
     <MESSAGE value="Prueba funcionando de Validaciones_de_Inicio_de_sesion.png" />
     <MESSAGE value="hasta aquí funciona el botón &quot;crear experto&quot;" />
     <MESSAGE value="FUNCIONAL, Edita y eliminar experto" />
-    <option name="LAST_COMMIT_MESSAGE" value="FUNCIONAL, Edita y eliminar experto" />
+    <MESSAGE value="FUNCIONAL, Edita y eliminar experto. mini mac" />
+    <option name="LAST_COMMIT_MESSAGE" value="FUNCIONAL, Edita y eliminar experto. mini mac" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

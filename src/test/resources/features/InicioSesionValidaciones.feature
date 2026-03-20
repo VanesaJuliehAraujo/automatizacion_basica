@@ -21,6 +21,9 @@ Feature: Upccelerator
     When Telefono
     And Pais
     And Ciudad
+    And Dominio
+    And Terminos y condiciones
+    And Politica de tratamiento de datos
     And Email correcto
     Then Clic  Guardar
     And Editar
@@ -29,3 +32,12 @@ Feature: Upccelerator
     And Eliminar experto
     When Cancelar eliminar
     Then Confirmar eliminar
+    Given El usuario da clic en el boton Crear Campania
+    And Nombre de la campania
+    And Asunto de la campania
+    When Remitente
+    And Lista de contactos
+    When Seleccion template
+    When Plantilla predisenada
+    And Enviar ahora
+    Then Elimina plantilla
