@@ -12,13 +12,9 @@ import io.cucumber.java.en.When;
 import java.nio.file.Paths;
 import java.util.regex.Pattern;
 
-import static driverSetup.driver.page;
+import static baseTest.BaseTest.page;
 
 public class ExpertosSteps {
-
-    // ============================================
-    // CREAR EXPERTO
-    // ============================================
 
     @Given("El usuario da clic en Agregar Experto")
     public void clic_agregar_experto() {
@@ -31,11 +27,6 @@ public class ExpertosSteps {
         page.waitForTimeout(1000);
         page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("after_click_agregar.png")));
         System.out.println("Screenshot guardado: after_click_agregar.png");
-    }
-
-    @Given("El usuario da clic en el boton Crear Experto")
-    public void clic_boton_crear_experto() {
-        clic_agregar_experto();
     }
 
     @Given("El usuario agrega fotografia")
@@ -54,30 +45,6 @@ public class ExpertosSteps {
         }
     }
 
-    @Given("Selecciona la imagen del local")
-    public void selecciona_imagen_del_local() {
-        page.locator("input[type='file']").first().setInputFiles(Paths.get("src/test/resources/images/pet (1).jpg"));
-        page.waitForTimeout(500);
-        System.out.println("Primera imagen seleccionada del local");
-    }
-
-    @When("Seleccion de imagen dos")
-    public void seleccion_imagen_dos() {
-        page.locator("input[type='file']").nth(1).setInputFiles(Paths.get("src/test/resources/images/Screenshot_2.png"));
-        page.waitForTimeout(500);
-        System.out.println("Segunda imagen seleccionada");
-    }
-
-    @When("Elimina imagen")
-    public void elimina_imagen() {
-        try {
-            page.locator("button[aria-label*='eliminar'], button[aria-label*='delete'], button[aria-label*='remove']").first().click();
-            System.out.println("Imagen eliminada");
-        } catch (Exception e) {
-            System.out.println("No se encontró botón de eliminar o ya fue eliminada");
-        }
-    }
-
     @When("Nombre experto")
     public void nombre_experto() {
         page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Nombre.*", Pattern.CASE_INSENSITIVE))).first().fill("prueba automatizada 2");
@@ -85,19 +52,16 @@ public class ExpertosSteps {
 
     @When("Descripción")
     public void descripcion() {
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Descripci.*", Pattern.CASE_INSENSITIVE))).first().click();
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Descripci.*", Pattern.CASE_INSENSITIVE))).first().fill("esto es una prueba");
-    }
-
-    @When("Descripcion")
-    public void descripcion_sin_acento() {
-        descripcion();
+        Locator desc = page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Descripci.*", Pattern.CASE_INSENSITIVE))).first();
+        desc.click();
+        desc.fill("esto es una prueba");
     }
 
     @When("Email incorrecto")
     public void email_incorrecto() {
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Email.*", Pattern.CASE_INSENSITIVE))).first().click();
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Email.*", Pattern.CASE_INSENSITIVE))).first().fill("hahortadevcol.com");
+        Locator email = page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Email.*", Pattern.CASE_INSENSITIVE))).first();
+        email.click();
+        email.fill("hahortadevcol.com");
     }
 
     @When("Selecciona extension")
@@ -108,8 +72,9 @@ public class ExpertosSteps {
 
     @When("Telefono")
     public void telefono() {
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*[Tt]el.*"))).first().click();
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*[Tt]el.*"))).first().fill("(302) 446 - 9077");
+        Locator tel = page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*[Tt]el.*"))).first();
+        tel.click();
+        tel.fill("(302) 446 - 9077");
     }
 
     @When("Pais")
@@ -127,8 +92,9 @@ public class ExpertosSteps {
 
     @And("Dominio")
     public void dominio() {
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Dominio")).click();
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Dominio")).fill("www.pruebaautomatizada.com");
+        Locator dominio = page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName("Dominio"));
+        dominio.click();
+        dominio.fill("www.pruebaautomatizada.com");
     }
 
     @And("Terminos y condiciones")
@@ -160,14 +126,26 @@ public class ExpertosSteps {
 
     @When("Email correcto")
     public void email_correcto() {
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Email.*", Pattern.CASE_INSENSITIVE))).first().click();
-        page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Email.*", Pattern.CASE_INSENSITIVE))).first().fill("hahorta@devcol.com.co");
-        page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Guardar")).click();
+        Locator email = page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Email.*", Pattern.CASE_INSENSITIVE))).first();
+        email.click();
+        email.fill("hahorta@devcol.com.co");
     }
 
-    // ============================================
-    // EDITAR EXPERTO
-    // ============================================
+    private void esperarTarjetaExperto() {
+        try {
+            page.locator(".v-card")
+                .filter(new Locator.FilterOptions().setHasText("prueba automatizada 2"))
+                .first()
+                .waitFor(new Locator.WaitForOptions().setTimeout(10000));
+        } catch (Exception ignore) {
+            try {
+                page.locator(".v-card")
+                    .filter(new Locator.FilterOptions().setHasText("hahorta@devcol.com.co"))
+                    .first()
+                    .waitFor(new Locator.WaitForOptions().setTimeout(5000));
+            } catch (Exception ignored) {}
+        }
+    }
 
     private void clickThreeDotMenu() {
         Locator card = page.locator(".v-card").filter(new Locator.FilterOptions().setHasText("prueba automatizada 2"));
@@ -182,7 +160,7 @@ public class ExpertosSteps {
     public void editar() {
         page.navigate("https://appredesign.upccelerator.com/experts");
         page.waitForLoadState(LoadState.DOMCONTENTLOADED);
-        page.waitForTimeout(500);
+        esperarTarjetaExperto();
         page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("before_edit.png")));
         System.out.println("Buscando el experto 'prueba automatizada 2' para editar...");
         try {
@@ -200,8 +178,9 @@ public class ExpertosSteps {
     @Then("Editar Descripcion")
     public void editar_descripcion() {
         try {
-            page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Descripci.*", Pattern.CASE_INSENSITIVE))).first().click();
-            page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Descripci.*", Pattern.CASE_INSENSITIVE))).first().fill("esto es una prueba, editada");
+            Locator desc = page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(Pattern.compile(".*Descripci.*", Pattern.CASE_INSENSITIVE))).first();
+            desc.click();
+            desc.fill("esto es una prueba, editada");
             System.out.println("Descripción editada correctamente");
         } catch (Exception e) {
             System.out.println("Error al editar descripción: " + e.getMessage());
@@ -220,18 +199,11 @@ public class ExpertosSteps {
         }
     }
 
-    // ============================================
-    // ELIMINAR EXPERTO
-    // ============================================
-
     @Then("Eliminar experto")
     public void eliminar_experto() {
-        try {
-            if (page.locator(".v-overlay--active").count() > 0) {
-                page.locator(".v-overlay--active .v-btn--icon").first().click();
-                page.waitForTimeout(500);
-            }
-        } catch (Exception ignore) {}
+        page.navigate("https://appredesign.upccelerator.com/experts");
+        page.waitForLoadState(LoadState.DOMCONTENTLOADED);
+        esperarTarjetaExperto();
         System.out.println("Buscando el experto 'prueba automatizada 2' para eliminar...");
         try {
             clickThreeDotMenu();
