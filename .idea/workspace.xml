@@ -5,40 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb52dbc4-9c76-43f7-8ab4-c19d904af5c9" name="Changes" comment="Flujo correcto, enviar ahora">
-      <change afterPath="$PROJECT_DIR$/Email.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Email_enviar_ahora.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Guardar_como_borrador.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programar_envio_email.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/baseTest/BaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Emails.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Validaciones_de_Inicio_de_sesion.png" beforeDir="false" afterPath="$PROJECT_DIR$/Validaciones_de_Inicio_de_sesion.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/after_3dot_editar.png" beforeDir="false" afterPath="$PROJECT_DIR$/after_3dot_editar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/after_3dot_eliminar.png" beforeDir="false" afterPath="$PROJECT_DIR$/after_3dot_eliminar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/after_click_agregar.png" beforeDir="false" afterPath="$PROJECT_DIR$/after_click_agregar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/after_delete.png" beforeDir="false" afterPath="$PROJECT_DIR$/after_delete.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/before_edit.png" beforeDir="false" afterPath="$PROJECT_DIR$/before_edit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/before_guardar.png" beforeDir="false" afterPath="$PROJECT_DIR$/before_guardar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CucumberTestRunner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Steps/EmailEnviarAhora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Steps/Emails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Steps/EmailGuardarBorrador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Steps/EmailProgramarEnvio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Steps/Emails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Steps/Emails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Steps/ExpertosSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Steps/ExpertosSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Steps/InicioSesionSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Steps/InicioSesionSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/cucumberHooks/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/cucumberHooks/Hooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/driverSetup/driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/driverSetup/driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/EmailEnviarAhora.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/EmailGuardarBorrador.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/EmailProgramarEnvio.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/InicioSesionValidaciones.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/InicioSesionyExperto.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cucumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cucumber.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/CucumberTestRunner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Steps/ExpertosSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Steps/ExpertosSteps.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Steps/InicioSesionSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Steps/InicioSesionSteps.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/cucumberHooks/Hooks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/cucumberHooks/Hooks.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/driverSetup/driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/driverSetup/driver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/features/InicioSesionValidaciones.feature" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +37,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -85,41 +61,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Cucumber Java.Feature: InicioSesion.executor&quot;: &quot;Debug&quot;,
-    &quot;Cucumber Java.Feature: WorkingCase_CreaciónIntención.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: WorkingCase_InicioSesion.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: Validaciones de Inicio de sesion.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JUnit.All in TestPlaywright.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CucumberTest.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Devcol - Automatización/Uppcelerator/automatizacion_basica/src/test/resources/features&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Cucumber Java.Feature: InicioSesion.executor": "Debug",
+    "Cucumber Java.Feature: WorkingCase_CreaciónIntención.executor": "Run",
+    "Cucumber Java.Feature: WorkingCase_InicioSesion.executor": "Run",
+    "Cucumber Java.Scenario: Validaciones de Inicio de sesion.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JUnit.All in TestPlaywright.executor": "Run",
+    "JUnit.CucumberTest.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Devcol/automation-upcc/automatizacion_basica",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Devcol - Automatización\Uppcelerator\automatizacion_basica\src\test\resources\features" />
@@ -264,6 +240,7 @@
       <workItem from="1774476418727" duration="21598000" />
       <workItem from="1775599200590" duration="24856000" />
       <workItem from="1776456618819" duration="3798000" />
+      <workItem from="1776797010881" duration="128000" />
     </task>
     <task id="LOCAL-00001" summary="Prueba funcionando de Validaciones_de_Inicio_de_sesion.png">
       <created>1764714904846</created>

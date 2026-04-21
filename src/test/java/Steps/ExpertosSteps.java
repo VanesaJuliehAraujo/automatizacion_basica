@@ -12,7 +12,7 @@ import io.cucumber.java.en.When;
 import java.nio.file.Paths;
 import java.util.regex.Pattern;
 
-import static baseTest.BaseTest.page;
+import static driverSetup.driver.page;
 
 public class ExpertosSteps {
 
@@ -110,7 +110,7 @@ public class ExpertosSteps {
         page.locator(".ql-editor").nth(1).fill("Aceptación de terminos y condiciones, indica que al navegar, compra, el usuario acepta las condiciones\n\nPolítica de pagos: Especifica los métodos de pago moneda y la obligación de realizar el pago por adelantado\n\nUso permitido: Prohibe actividades ilicitas, spam o comentarios ofensivos\n\nAceptación de Términos: Indica que al navegar o comprar, el usuario acepta las condiciones.\nPropiedad Intelectual: Protege el contenido (logos, textos, fotos) indicando que es propiedad exclusiva de la empresa. Política de Pagos: Especifica los métodos de pago, moneda y la obligatoriedad de realizar el pago por adelantado. Uso Permitido/Prohibido: Prohíbe actividades ilícitas, spam o comentarios ofensivos.\nEnvíos y Devoluciones: Detalla tiempos de entrega, costes de envío y el procedimiento para devoluciones o garantías.\nLimitación de Responsabilidad: La empresa no se hace responsable de errores técnicos o usos indebidos del producto. Legislación Aplicable: Define la jurisdicción y las leyes del país o estado bajo las cuales se rige el acuerdo");
     }
 
-    @Then("Clic  Guardar")
+    @Then("Clic Guardar")
     public void clic_guardar() {
         page.waitForTimeout(1000);
         page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("before_guardar.png")).setFullPage(true));
@@ -134,15 +134,15 @@ public class ExpertosSteps {
     private void esperarTarjetaExperto() {
         try {
             page.locator(".v-card")
-                .filter(new Locator.FilterOptions().setHasText("prueba automatizada 2"))
-                .first()
-                .waitFor(new Locator.WaitForOptions().setTimeout(10000));
+                    .filter(new Locator.FilterOptions().setHasText("prueba automatizada 2"))
+                    .first()
+                    .waitFor(new Locator.WaitForOptions().setTimeout(10000));
         } catch (Exception ignore) {
             try {
                 page.locator(".v-card")
-                    .filter(new Locator.FilterOptions().setHasText("hahorta@devcol.com.co"))
-                    .first()
-                    .waitFor(new Locator.WaitForOptions().setTimeout(5000));
+                        .filter(new Locator.FilterOptions().setHasText("hahorta@devcol.com.co"))
+                        .first()
+                        .waitFor(new Locator.WaitForOptions().setTimeout(5000));
             } catch (Exception ignored) {}
         }
     }
@@ -153,7 +153,7 @@ public class ExpertosSteps {
             card = page.locator(".v-card").filter(new Locator.FilterOptions().setHasText("hahorta@devcol.com.co"));
         }
         card.first().locator("button").filter(new Locator.FilterOptions().setHasText(Pattern.compile("^$"))).first()
-            .click(new Locator.ClickOptions().setForce(true));
+                .click(new Locator.ClickOptions().setForce(true));
     }
 
     @Then("Editar")

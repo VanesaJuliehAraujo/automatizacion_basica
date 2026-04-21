@@ -7,7 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import static baseTest.BaseTest.page;
+import static driverSetup.driver.page;
 
 public class InicioSesionSteps {
 

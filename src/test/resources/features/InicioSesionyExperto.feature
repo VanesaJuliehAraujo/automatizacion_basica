@@ -25,10 +25,11 @@ Feature: Upccelerator
     And Terminos y condiciones
     And Politica de tratamiento de datos
     And Email correcto
-    Then Clic  Guardar
+    Then Clic Guardar
     And Editar
     And Editar Descripcion
     Then Modificar
     And Eliminar experto
     When Cancelar eliminar
     Then Confirmar eliminar
+
